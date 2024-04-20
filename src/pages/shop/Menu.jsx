@@ -15,7 +15,7 @@ const Menu = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:9090/menu");
+        const response = await fetch("https://foodieserver-9u62.onrender.com/menu");
         const data = await response.json();
         setMenu(data);
         setFilteredItems(data);

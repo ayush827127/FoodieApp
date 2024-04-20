@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react'
 
 const axiosPublic =  axios.create({
-    baseURL: 'http://localhost:9090',
+    baseURL: 'https://foodieserver-9u62.onrender.com/',
   })
 
 const useAxiosPublic = () => {
