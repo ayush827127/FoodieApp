@@ -25,20 +25,20 @@ const Modal = () => {
     const password = data.password;
     login(email, password)
       .then((result) => {
-        const userInfo = {
-          name: data.name,
-          email: data.email,
-        };
-        axiosPublic
-          .post("users", userInfo)
-          .then((response) => {
+        // const userInfo = {
+        //   name: data.name,
+        //   email: data.email,
+        // };
+        // axiosPublic
+        //   .post("users", userInfo)
+        //   .then((response) => {
             alert("Login Successfully !");
             document.getElementById("my_modal_5").close();
             navigate(from, { replace: true });
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+          // })
+          // .catch((error) => {
+          //   console.log(error);
+          // });
       })
       .catch((error) => {
         setErrorMessage("Provide a correct email and password!");

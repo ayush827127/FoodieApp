@@ -35,7 +35,7 @@ const CartPage = () => {
     if (item.quantity > 1) {
       try {
         const response = await fetch(
-          `http://localhost:9090/carts/${item._id}`,
+          `https://foodieserver-9u62.onrender.com/carts/${item._id}`,
           {
             method: "PUT",
             headers: {
@@ -65,7 +65,7 @@ const CartPage = () => {
   };
   const handleIncrease = async (item) => {
     try {
-      const response = await fetch(`http://localhost:9090/carts/${item._id}`, {
+      const response = await fetch(`https://foodieserver-9u62.onrender.com/carts/${item._id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json; charset=UTF-8",
@@ -101,7 +101,7 @@ const CartPage = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:9090/carts/${item._id}`)
+          .delete(`https://foodieserver-9u62.onrender.com/carts/${item._id}`)
           .then((response) => {
             if (response) {
               refetch();
