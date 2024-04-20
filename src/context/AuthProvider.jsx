@@ -39,7 +39,7 @@ const AuthProvider = ({ children }) => {
 
   // logout
   const logout = () => {
-    localStorage.removeItem('genius-token');
+    // localStorage.removeItem('genius-token');
     return signOut(auth);
   };
 
@@ -55,18 +55,18 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      if (currentUser) {
-        const userInfo = { email: currentUser.email };
-        axios
-          .post("http://localhost:9090/jwt",userInfo)
-          .then((response) => {
-            if (response.data.token) {
-              localStorage.setItem("access-token",response.data.token);
-            }
-          });
-      } else {
-        localStorage.removeItem("access-token");
-      }
+      // if (currentUser) {
+      //   const userInfo = { email: currentUser.email };
+      //   axios
+      //     .post("http://localhost:9090/jwt",userInfo)
+      //     .then((response) => {
+      //       if (response.data.token) {
+      //         localStorage.setItem("access-token",response.data.token);
+      //       }
+      //     });
+      // } else {
+      //   localStorage.removeItem("access-token");
+      // }
       setLoading(false);
     });
 
