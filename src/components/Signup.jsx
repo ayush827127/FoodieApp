@@ -25,18 +25,18 @@ const Signup = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        updateUserProfile(data.email, data.photoURL).then(() => {
-          const userInfo = {
-            name: data.name,
-            email: data.email,
-          };
-          axiosPublic.post("users", userInfo)
-            .then((response) => {
+        // updateUserProfile(data.email, data.photoURL).then(() => {
+        //   const userInfo = {
+        //     name: data.name,
+        //     email: data.email,
+        //   };
+        //   axiosPublic.post("users", userInfo)
+        //     .then((response) => {
               alert("Account creation successfully!");
               document.getElementById("my_modal_5").close();
               navigate(from, { replace: true });
-            });
-        });
+        //     });
+        // });
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -51,15 +51,15 @@ const Signup = () => {
   const handleLogin = () => {
     signUpWithGmail()
       .then((result) => {
-        const userInfo = {
-          name: result?.user?.displayName,
-          email: result?.user?.email,
-        };
-        axiosPublic.post("users", userInfo).then((response) => {
+        // const userInfo = {
+        //   name: result?.user?.displayName,
+        //   email: result?.user?.email,
+        // };
+        // axiosPublic.post("users", userInfo).then((response) => {
           alert("Login Successfully !");
           document.getElementById("my_modal_5").close();
           navigate("/");
-        });
+        // });
       })
       .catch((error) => console.log(error));
   };
