@@ -32,13 +32,13 @@ const Modal = () => {
         // axiosPublic
         //   .post("users", userInfo)
         //   .then((response) => {
-            alert("Login Successfully !");
-            document.getElementById("my_modal_5").close();
-            navigate(from, { replace: true });
-          // })
-          // .catch((error) => {
-          //   console.log(error);
-          // });
+        alert("Login Successfully !");
+        document.getElementById("my_modal_5").close();
+        navigate(from, { replace: true });
+        // })
+        // .catch((error) => {
+        //   console.log(error);
+        // });
       })
       .catch((error) => {
         setErrorMessage("Provide a correct email and password!");
@@ -46,22 +46,21 @@ const Modal = () => {
   };
 
   const handleLogin = () => {
-    signUpWithGmail()
-      .then((result) => {
-        const userInfo = {
-          name: result?.user?.displayName,
-          email: result?.user?.email,
-        };
-        axiosPublic.post("users", userInfo).then((response) => {
-          alert("Login Successfully !");
-          document.getElementById("my_modal_5").close();
-          navigate(from, { replace: true });
-        });
-      })
-      .catch((error) => {
-        const errorMessage = error.message;
-        seterrorMessage("Please provide valid email & password!");
-      });
+    signUpWithGmail().then((result) => {
+      //   const userInfo = {
+      //     name: result?.user?.displayName,
+      //     email: result?.user?.email,
+      //   };
+      //   axiosPublic.post("users", userInfo).then((response) => {
+      alert("Login Successfully !");
+      document.getElementById("my_modal_5").close();
+      navigate(from, { replace: true });
+      //   });
+      // })
+      // .catch((error) => {
+      //   const errorMessage = error.message;
+      //   seterrorMessage("Please provide valid email & password!");
+    });
   };
 
   return (
