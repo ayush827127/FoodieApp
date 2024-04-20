@@ -26,9 +26,9 @@ const Footer = () => {
         </nav>
         <nav>
           <header className="footer-title">Contact Us</header>
-          <a className="link link-hover">example@email.com</a>
-          <a className="link link-hover">+64 958 248 966</a>
-          <a className="link link-hover">Social media</a>
+          <a className="link link-hover" target="_blank" href="mailto:ayush385361@gmail.com">ayush385361@gmail.com</a>
+          <a className="link link-hover" href="tel:+9182712774460">+91 82712774460</a>
+          <a className="link link-hover" target="_blank" href="https://ayush827127.github.io/ayush/">https://ayush827127.github.io/ayush/</a>
         </nav>
       </footer>
         <hr />
